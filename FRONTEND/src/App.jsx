@@ -111,7 +111,7 @@ function App() {
       {/* Header */}
       <header className="header">
         <div className="header-content">
-          <h1 className="title">🔥 AI Resume Analyzer</h1>
+          <h1 className="title">AI Resume Analyzer</h1>
           <p className="subtitle">Analyze your resume against any job description</p>
           <div className={`status ${health ? "status-ok" : "status-unavailable"}`}>
             Backend: {health ? "Connected" : "Unavailable"}
@@ -125,7 +125,7 @@ function App() {
             <div className="form-card">
               <div className="form-group">
                 <label htmlFor="resume-input" className="form-label">
-                  📄 Upload Your Resume
+                   Upload Your Resume
                 </label>
                 <div className="file-input-wrapper" onClick={handleFileWrapperClick}>
                   <input
@@ -147,7 +147,7 @@ function App() {
 
               <div className="form-group">
                 <label htmlFor="jd-input" className="form-label">
-                  💼 Job Description
+                   Job Description
                 </label>
                 <textarea
                   id="jd-input"
@@ -184,19 +184,19 @@ function App() {
                   <h2>Match Score</h2>
                   <p className="score-label">
                     {result.score >= 70
-                      ? "✨ Excellent fit!"
+                      ? "Excellent fit!"
                       : result.score >= 50
-                      ? "👍 Good match"
+                      ? "Good match"
                       : result.score > 0
-                      ? "📈 Needs improvement"
-                      : "❌ No matching skills found"}
+                      ? "Needs improvement"
+                      : "No matching skills found"}
                   </p>
                 </div>
               </div>
 
               {/* Matched Skills */}
               <div className="skills-section">
-                <h3 className="skills-title">✅ Matched Skills ({result.matchedSkills?.length || 0})</h3>
+                <h3 className="skills-title">Matched Skills ({result.matchedSkills?.length || 0})</h3>
                 {(result.matchedSkills || []).length > 0 ? (
                   <div className="skills-list matched">
                     {result.matchedSkills.map((skill, i) => (
@@ -212,7 +212,7 @@ function App() {
 
               {/* Missing Skills */}
               <div className="skills-section">
-                <h3 className="skills-title">❌ Missing Skills ({result.missingSkills?.length || 0})</h3>
+                <h3 className="skills-title"> Missing Skills ({result.missingSkills?.length || 0})</h3>
                 {(result.missingSkills || []).length > 0 ? (
                   <>
                     <div className="skills-list missing">
@@ -223,18 +223,18 @@ function App() {
                       ))}
                     </div>
                     <button onClick={copyMissing} className="copy-button">
-                      📋 Copy Missing Skills
+                       Copy Missing Skills
                     </button>
                   </>
                 ) : (
-                  <p className="empty-message">🎉 You have all required skills!</p>
+                  <p className="empty-message"> You have all required skills!</p>
                 )}
               </div>
 
               {/* Suggestions */}
               {(result.missingSkills || []).length > 0 && (
                 <div className="suggestions-section">
-                  <h3 className="suggestions-title">💡 Learning Suggestions</h3>
+                  <h3 className="suggestions-title"> Learning Suggestions</h3>
                   <ul className="suggestions-list">
                     {result.missingSkills.map((skill, i) => (
                       <li key={i}>
