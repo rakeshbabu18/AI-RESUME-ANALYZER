@@ -14,6 +14,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Simple request logger to help debug network requests
+app.use((req, res, next) => {
+  console.log(new Date().toISOString(), req.method, req.url);
+  next();
+});
+
+// Health endpoint for quick connectivity checks
+app.get('/api/health', (req, res) => {
+  res.json({ ok: true, time: new Date().toISOString() });
+});
+
 app.use("/api", analyzeRoute);
 
 const PORT = 5000;

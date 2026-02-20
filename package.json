@@ -1,0 +1,11 @@
+{
+  "name": "ai-resume-analyser",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:start --prefix BACKEND\" \"npm:dev --prefix FRONTEND\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
