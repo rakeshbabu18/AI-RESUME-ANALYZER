@@ -2,8 +2,14 @@
   "name": "ai-resume-analyser",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "start": "concurrently \"npm:start --prefix BACKEND\" \"npm:dev --prefix FRONTEND\""
+    "dev": "concurrently \"npm start --prefix BACKEND\" \"npm run dev --prefix FRONTEND\"",
+    "start": "node BACKEND/server.js",
+    "build": "npm install --prefix BACKEND && npm install --prefix FRONTEND && npm run build --prefix FRONTEND",
+    "install-all": "npm install --prefix BACKEND && npm install --prefix FRONTEND"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
